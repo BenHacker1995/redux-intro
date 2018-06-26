@@ -22,8 +22,7 @@ class App extends Component {
   }
 
   clearAllColors = () => {
-    const action = { type: 'DELETE_COLOR' };
-    this.props.dispatch( action );
+    this.props.dispatch( { type: 'DELETE_COLOR' } );
   }
 
   sendColorToRedux = () => {
