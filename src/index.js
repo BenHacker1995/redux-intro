@@ -28,6 +28,9 @@ const secondReducer = ( state = [], action ) => {
     console.log( `I'm a color reducer.` );
     if( action.type === 'ADD_COLOR' ) {
         return [ ...state, action.payload ]
+    } if( action.type === 'ADD' ) {
+        console.log( 'Will this log?' );
+        // The answer is yes
     }
     if( action.type === 'DELETE_COLOR' ) {
         state = [];
