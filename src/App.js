@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
+import ColorList from './components/ColorList/ColorList';
 
 // Allowing us to access reduxState on props
 const mapReduxStateToProps = ( reduxState ) => ({
@@ -40,12 +41,13 @@ class App extends Component {
         <div>{ this.props.reduxState.counterReducer }</div>
         {/* dispatch takes in an action */}
         <button onClick={ () => this.props.dispatch({ type: 'ADD' })}>Add</button>
-        <button onClick={ () => this.props.dispatch({ type: 'SUBTRACT'})}>Subtract</button>
+        <button onClick={ () => this.props.dispatch({ type: 'SUBTRACT' })}>Subtract</button>
 
-        <h3>Enter Color Here;</h3>
+        <h3>Enter Color Here</h3>
         <input onChange={ this.handleColorChange } value={ this.state.color } />
         <button onClick={ this.sendColorToRedux }>Submit</button>
         <button onClick={ this.clearAllColors }>DELETE COLORS</button>
+        <ColorList />
       </div>
     );
   }
